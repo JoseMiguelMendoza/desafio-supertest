@@ -1,0 +1,115 @@
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:05:56.731Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:05:57.401Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:06:13.678Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:06:14.292Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:06:57.594Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:06:58.126Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:07:23.045Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:07:23.551Z"}
+http: Someone made a POST request to the endpoint /api/carts {"timestamp":"2023-10-09T20:07:32.123Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:11:42.359Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:11:43.045Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:14:10.210Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:14:10.776Z"}
+http: Someone made a GET request to the endpoint /api/products {"timestamp":"2023-10-09T20:14:15.702Z"}
+http: Someone made a POST request to the endpoint /api/products {"timestamp":"2023-10-09T20:14:15.809Z"}
+info: Al crear un producto deben llenarse los siguientes espacios:
+        - title: Must be a string (undefined)
+        - description: Must be a string (undefined)
+        - price: Must be a number (undefined)
+        - code: Must be a number and unique (undefined)
+        - stock: Must be a number (undefined)
+        - category: Must be a string (undefined)
+     {"timestamp":"2023-10-09T20:14:15.810Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:14:58.139Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:14:58.685Z"}
+http: Someone made a GET request to the endpoint /api/products {"timestamp":"2023-10-09T20:15:00.428Z"}
+http: Someone made a POST request to the endpoint /api/products {"timestamp":"2023-10-09T20:15:00.550Z"}
+info: undefined {"timestamp":"2023-10-09T20:15:00.565Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:15:31.145Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:15:31.789Z"}
+http: Someone made a GET request to the endpoint /api/products {"timestamp":"2023-10-09T20:15:33.129Z"}
+http: Someone made a POST request to the endpoint /api/products {"timestamp":"2023-10-09T20:15:33.250Z"}
+info: undefined {"timestamp":"2023-10-09T20:15:33.266Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:15:48.443Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:15:49.064Z"}
+http: Someone made a GET request to the endpoint /api/products {"timestamp":"2023-10-09T20:15:50.809Z"}
+http: Someone made a POST request to the endpoint /api/products {"timestamp":"2023-10-09T20:15:50.928Z"}
+info: undefined {"timestamp":"2023-10-09T20:15:50.943Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:16:04.464Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:16:04.992Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:17:11.325Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:17:11.970Z"}
+http: Someone made a GET request to the endpoint /api/products {"timestamp":"2023-10-09T20:17:14.101Z"}
+http: Someone made a POST request to the endpoint /api/products {"timestamp":"2023-10-09T20:17:14.219Z"}
+info: undefined {"timestamp":"2023-10-09T20:17:14.235Z"}
+http: Someone made a GET request to the endpoint /mockingproducts {"timestamp":"2023-10-09T20:18:13.340Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:19:07.179Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:19:07.847Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:19:25.739Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:19:26.313Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:19:41.233Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:19:41.730Z"}
+http: Someone made a GET request to the endpoint /api/products {"timestamp":"2023-10-09T20:19:43.538Z"}
+http: Someone made a POST request to the endpoint /api/products {"timestamp":"2023-10-09T20:19:43.656Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:20:16.465Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:20:17.110Z"}
+http: Someone made a GET request to the endpoint /api/products {"timestamp":"2023-10-09T20:20:18.894Z"}
+http: Someone made a POST request to the endpoint /api/products {"timestamp":"2023-10-09T20:20:19.011Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:20:41.295Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:20:41.840Z"}
+http: Someone made a GET request to the endpoint /api/products {"timestamp":"2023-10-09T20:20:46.148Z"}
+http: Someone made a POST request to the endpoint /api/products {"timestamp":"2023-10-09T20:20:46.270Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:24:38.072Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:24:38.723Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:26:31.718Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:26:32.412Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:30:15.590Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:30:16.319Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:31:16.531Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:31:17.133Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:31:38.690Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:31:39.256Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:32:56.455Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:32:57.083Z"}
+info: A new user has been created successfully. {"timestamp":"2023-10-09T20:32:58.773Z"}
+info: An user has been redirected to the view LOGIN {"timestamp":"2023-10-09T20:32:58.858Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:34:44.148Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:34:44.839Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:34:58.181Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:34:58.688Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:37:09.111Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:37:10.648Z"}
+info: An user has logged in. {"timestamp":"2023-10-09T20:37:34.442Z"}
+info: The user has been redirected to the view PRODUCTS for being a User. {"timestamp":"2023-10-09T20:37:34.580Z"}
+info: A user has logged out. {"timestamp":"2023-10-09T20:38:37.282Z"}
+info: An user has logged in. {"timestamp":"2023-10-09T20:39:55.643Z"}
+info: The user has been redirected to the view PRODUCTS for being a User. {"timestamp":"2023-10-09T20:39:55.772Z"}
+info: A user has logged out. {"timestamp":"2023-10-09T20:40:34.466Z"}
+info: A new user has been created successfully and logged in through GitHub. {"timestamp":"2023-10-09T20:40:36.935Z"}
+info: An user has been redirected to the view PRODUCTS for being a User. {"timestamp":"2023-10-09T20:40:37.030Z"}
+info: A user has logged out. {"timestamp":"2023-10-09T20:41:10.680Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:41:55.141Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:41:55.803Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:42:22.952Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:42:23.546Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:42:54.935Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:42:55.790Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:43:16.471Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:43:17.011Z"}
+info: A new user has been created successfully. {"timestamp":"2023-10-09T20:43:18.880Z"}
+info: An user has been redirected to the view LOGIN {"timestamp":"2023-10-09T20:43:18.969Z"}
+info: An user has logged in. {"timestamp":"2023-10-09T20:43:19.106Z"}
+info: The user has been redirected to the view PRODUCTS for being a User. {"timestamp":"2023-10-09T20:43:19.221Z"}
+info: Server Express Puerto 8080 {"timestamp":"2023-10-09T20:44:07.769Z"}
+info: DB connected! {"timestamp":"2023-10-09T20:44:08.365Z"}
+info: A new user has been created successfully. {"timestamp":"2023-10-09T20:44:10.526Z"}
+info: An user has been redirected to the view LOGIN {"timestamp":"2023-10-09T20:44:10.644Z"}
+info: An user has logged in. {"timestamp":"2023-10-09T20:44:10.784Z"}
+info: The user has been redirected to the view PRODUCTS for being a User. {"timestamp":"2023-10-09T20:44:10.899Z"}
+info: A new user has been created successfully. {"timestamp":"2023-10-09T20:46:53.110Z"}
+info: An user has been redirected to the view LOGIN {"timestamp":"2023-10-09T20:46:53.186Z"}
+info: An user has logged in. {"timestamp":"2023-10-09T20:46:53.325Z"}
+info: The user has been redirected to the view PRODUCTS for being a User. {"timestamp":"2023-10-09T20:46:53.441Z"}
+info: An user has been redirected to the view PRODUCTS for being a User. {"timestamp":"2023-10-09T20:48:20.193Z"}
+info: A user has logged out. {"timestamp":"2023-10-09T20:48:25.706Z"}

@@ -1,0 +1,24 @@
+<div class="navbar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img style="margin-left: 5px; height: 45px;" src="/assets/icono-perfil.png" alt="Imagen de perfil">
+        <p style="color: white; font-family:'Kalam', cursive;">¡Bienvenido/a {{role}}, {{name}}!</p>
+        <div style="border-right: 1px solid white; color: #003500">---</div>
+        <a style="text-decoration: none;" href="/products"><p style="margin-left: 15px; font-family: 'Kalam', cursive; font-size: 18px; color: white;">Home</p></a>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a style="text-decoration: none;" href="/carts/{{cid}}"><img style="margin-right: 15px; height: 35px;" src="/assets/carro-de-la-compra.png" alt="imagen-carrito"></a>
+        <div style="border-left: 1px solid white; color: #003500">--</div>
+        <a href="/logout" style="text-decoration: none; font-family: 'Kalam', cursive; margin-right: 15px; color: white; font-weight: bold;">Logout</a>
+    </div>
+</div>
+<div class="containerChat">
+    <h1 class="estiloTexto">Chat personal de <span class="estiloTexto" id="user"></span></h1>
+    <hr>
+    <div class="userAndInput">
+        <input type="text" id="chatBox" class="inputChat">
+    </div>
+    <div id="messagesLogs"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>

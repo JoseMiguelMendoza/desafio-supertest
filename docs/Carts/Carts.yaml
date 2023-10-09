@@ -1,0 +1,360 @@
+paths:
+  /api/carts:
+    get:
+      summary: Obtención de todos los carritos
+      tags:
+        - Carts
+      responses:
+        "201":
+          description: Carritos mostrados en pantalla existosamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      $ref: '#/components/schemas/Cart'
+    post:
+      summary: Creación de un carrito vacio
+      tags:
+        - Carts
+      responses:
+        "201":
+          description: Nuevo carrito creado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    properties:
+                      _id:
+                        type: ObjectId
+                        description: ID auto generado by mongo
+                      products:
+                        type: array
+  /api/carts/{cartId}:
+    get:
+      summary: Obten un carrito por su ID
+      tags:
+        - Carts
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: ID del carrito a buscar
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Carrito con ID (X) traido con éxito.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    $ref: '#/components/schemas/Cart'
+    put:
+      summary: Actualizar productos de un carrito por su ID
+      tags:
+        - Carts
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: ID del carrito a actualizar
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      product:
+                        type: ObjectId
+                        description: ID del producto dentro del carrito
+                      quantity:
+                        type: number
+                        description: Cantidad del producto
+      responses:
+        "200":
+          description: Carrito actualizado con exito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  cart:
+                    type: object
+                    properties:
+                      _id:
+                        type: ObjectId
+                      products:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            product:
+                              type: ObjectId
+                              description: Producto agregado al carrito
+                            quantity:
+                              type: number
+                              description: Cantidad del mismo producto agregados
+    delete:
+      summary: Elimina todos los productos de un carrito
+      tags:
+        - Carts
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: ID del carrito al que se le eliminará todos los productos
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Productos eliminados del carrito con ID (cartId).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+  /api/carts/{cartId}/product/{productId}:
+    post:
+      summary: Añadir producto en carrito
+      tags:
+        - Carts
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: ID del carrito al que se le quiere agregar un producto
+          schema:
+            type: string
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto a meter al carrito
+          schema:
+            type: string
+      responses:
+        "201":
+          description: Producto con ID (productId) ingresado al carrito con ID (cartId) de forma satisfactoria.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    properties:
+                      _id:
+                        type: ObjectId
+                        description: ID del carrito
+                      products:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            product:
+                              type: ObjectId
+                              description: ID del producto ingresado
+                            quantity:
+                              type: number
+                              description: Cantidad del producto ingresado
+  /api/carts/{cartId}/purchase:
+    post:
+      summary: Generar ticket de compra con productos del carrito con ID (cartId)
+      tags:
+        - Carts
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: ID del carrito del cual se quiere generar un ticket
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Ticket generado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      code:
+                        type: string
+                        unique: true
+                        required: true
+                      purchase_datetime:
+                        type: date
+                      ammount:
+                        type: number
+                      purchaser:
+                        type: string
+                      products:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            product:
+                              type: object
+                            quantity:
+                              type: number
+        "500":
+          description: Error del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+  /api/carts/{cartId}/products/{productId}:
+    put:
+      summary: Actualizar la cantidad de un producto en un carrito especifico
+      tags:
+        - Carts
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: ID del carrito a actualizar
+          schema:
+            type: string
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto al cual debemos actualizar el quantity
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quantity:
+                  type: number
+      responses:
+        "200":
+          description: Cantidad del producto en carrito actualizado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        "500":
+          description: Error del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+    delete:
+      summary: Eliminar un producto del carrito
+      tags:
+        - Carts
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          description: ID del carrito al cual se le quiere eliminar un producto
+          schema:
+            type: string
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto a eliminar del carrito
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Producto eliminado del carrito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+        "500":
+          description: Error del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: ID auto generado by mongo
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: ObjectId
+                description: Producto agregado al carrito
+              quantity:
+                type: number
+                description: Cantidad del mismo producto agregados

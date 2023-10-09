@@ -1,0 +1,261 @@
+paths:
+  /api/products:
+    get:
+      summary: Obtiene todos los productos
+      tags:
+        - Products
+      responses:
+        "200":
+          description: Los productos se muestran satisfactoriamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      $ref: '#/components/schemas/Product'
+        "500":
+          description: Error del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+    post:
+      summary: Crea un nuevo producto
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  required: true
+                description:
+                  type: string
+                  required: true
+                price:
+                  type: number
+                  required: true
+                code:
+                  type: number
+                  required: true
+                  unique: true
+                stock:
+                  type: number
+                  required: true
+                category:
+                  type: string
+                  required: true
+      responses:
+        "201":
+          description: Se ha creado un nuevo producto
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    $ref: '#/components/schemas/Product'
+        "400":
+          description: Todos los campos deben estar cubiertos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+  /api/products/{productId}:
+    get:
+      summary: Obtén un solo producto por su ID
+      tags:
+        - Products
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto a buscar
+          schema:
+            type: string
+      responses:
+        "200":
+          description: El producto con ID (X) existe, y esta mostrandose en pantalla satisfactoriamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    $ref: '#/components/schemas/Product'
+        "500":
+          description: Error con el servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+    put:
+      summary: Actualiza los datos de un producto por su ID
+      tags:
+        - Products
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto a actualizar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  required: true
+                description:
+                  type: string
+                  required: true
+                price:
+                  type: number
+                  required: true
+                code:
+                  type: number
+                  required: true
+                  unique: true
+                stock:
+                  type: number
+                  required: true
+                category:
+                  type: string
+                  required: true
+                status:
+                  type: boolean
+                  default: true
+                thumbnail:
+                  type: [string]
+                  default: []
+      responses:
+        "200":
+          description: Producto actualizado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    $ref: '#/components/schemas/Product'
+        "500":
+          description: Error con el servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+    delete:
+      summary: Elimina un solo producto por su ID
+      tags:
+        - Products
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID del producto a eliminar
+      responses:
+        "200":
+          description: Producto eliminado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: object
+                    $ref: '#/components/schemas/Product'
+        "500":
+          description: Error con el servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado por mongo
+        title:
+          type: string
+          description: Título del producto
+        description:
+          type: string
+          description: Descripción del producto
+        price:
+          type: number
+          description: Precio del producto
+        code:
+          type: number
+          description: Código del producto
+        stock:
+          type: number
+          description: Stock del producto
+        category:
+          type: string
+          description: Categoría del producto
+        status:
+          type: boolean
+          default: true
+          description: Status del producto
+        thumbnail:
+          type: [string]
+          default: []
+          description: Thumbnails del producto
+      required:
+        - title
+        - description
+        - code
+        - category
+        - price
+        - stock
